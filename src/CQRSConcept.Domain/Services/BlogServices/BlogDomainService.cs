@@ -5,9 +5,9 @@ namespace CQRSConcept.Domain.Services.BlogServices
 {
     public sealed class BlogDomainService
     {
-        private readonly IBlogRepository _blogRepository;
+        private readonly IBlogSqlRepository _blogRepository;
 
-        public BlogDomainService(IBlogRepository blogRepository)
+        public BlogDomainService(IBlogSqlRepository blogRepository)
         {
             _blogRepository = blogRepository;
         }

@@ -1,4 +1,5 @@
 using CQRSConcept.Api.Registeration;
+using CQRSConcept.Infrastructure.DbContexts.Mongo;
 using CQRSConcept.Infrastructure.Registeration;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -27,7 +28,7 @@ var summaries = new[]
     "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
 };
 
-app.MapGet("/weatherforecast", () =>
+app.MapGet("/weatherforecast", (ICQRSConceptContext cQRSConceptContext) =>
 {
     var forecast = Enumerable.Range(1, 5).Select(index =>
         new WeatherForecast

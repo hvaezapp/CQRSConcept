@@ -10,9 +10,9 @@ namespace CQRSConcept.Infrastructure.DbContexts.Mongo
 
         public CQRSConceptContext(IConfiguration configuration)
         {
-            var client = new MongoClient(configuration.GetSection("DatabaseSettings:Mongo:ConnectionString").Value);
-            var database = client.GetDatabase(configuration.GetSection("DatabaseSettings:Mongo:DatabaseName").Value);
-            Blogs = database.GetCollection<Blog>(configuration.GetSection("DatabaseSettings:Mongo:CollectionName").Value);
+            var client = new MongoClient(configuration.GetSection("ConnectionStrings:Mongo:ConnectionString").Value);
+            var database = client.GetDatabase(configuration.GetSection("ConnectionStrings:Mongo:DatabaseName").Value);
+            Blogs = database.GetCollection<Blog>(configuration.GetSection("ConnectionStrings:Mongo:CollectionName").Value);
         }
     }
 
