@@ -21,9 +21,9 @@ This project follows a multi-layered, component-based architecture with full sep
   - Queries are handled via MediatR and mapped to read models.
 
 - **Component Layers**:
-  - `CQRSConcept.Api` – The API layer exposing HTTP endpoints.
-  - `CQRSConcept.Domain` – Core domain logic, interfaces, and contracts.
-  - `CQRSConcept.Infrastructure` – Data persistence, external services.
+  - `CQRSConcept.Api` – The API layer exposing HTTP endpoints, features, consumers.
+  - `CQRSConcept.Domain` – Core domain and services, contracts.
+  - `CQRSConcept.Infrastructure` – Data persistence, repositories, external services.
 
 ---
 
