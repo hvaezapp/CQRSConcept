@@ -1,0 +1,46 @@
+
+services:
+
+  cqrsconceptmongodb:
+    image: mongo
+    container_name: cqrsconceptmongodb
+    restart: always
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+
+  # cqrsconceptsqldb:
+  #   image: mcr.microsoft.com/mssql/server:2017-latest
+  #   container_name: cqrsconceptsqldb
+  #   restart: always
+  #   environment:
+  #     SA_PASSWORD: "Your_password123"
+  #     ACCEPT_EULA: "Y"
+  #   ports:
+  #     - "1433:1433"
+
+volumes:
+  mongo_data:
+
+
+
+
+
+
+# services:
+
+#   cqrsconceptmongodb:
+#     image: mongo
+
+#   cqrsconceptsqldb:
+#     image: mcr.microsoft.com/mssql/server:2017-latest
+
+#   cqrsconcept.api:
+#     image: ${DOCKER_REGISTRY-}cqrsconceptapi
+#     build:
+#       context: .
+#       dockerfile: src/CQRSConcept.Api/Dockerfile
+
+# volumes:
+#   mongo_data:
