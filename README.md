@@ -27,6 +27,9 @@ This project follows a multi-layered, component-based architecture with full sep
 
 ---
 
+![Api endpoints](CQRSConceptSwagger.png)
+
+
 ## 🗂️ Solution Structure
 
 ```text
@@ -39,5 +42,3 @@ CQRSConcept/
 │
 └── docker-compose/                   # Docker setup (MongoDB, etc.)
 
-
-![Api endpoints](CQRSConceptSwagger.png)
