@@ -4,6 +4,9 @@ A clean and pragmatic .NET 9 solution demonstrating the **CQRS (Command Query Re
 
 ---
 
+![CQRS Architecture](CQRSConcept.png)
+
+
 ## 🧩 Architecture Overview
 
 This project follows a multi-layered, component-based architecture with full separation of concerns using CQRS principles:
