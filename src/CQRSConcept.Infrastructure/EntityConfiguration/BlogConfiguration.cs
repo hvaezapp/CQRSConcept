@@ -16,4 +16,5 @@ namespace CQRSConcept.Infrastructure.EntityConfiguration
 
         }
     }
+
 }

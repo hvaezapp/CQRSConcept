@@ -1,4 +1,5 @@
 using CQRSConcept.Api.Registeration;
+using CQRSConcept.Infrastructure.Registeration;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,6 +10,7 @@ builder.Services.AddOpenApi();
 
 //ioc
 builder.Services.RegisterDbContext(builder.Configuration);
+builder.Services.RegisterMongo(builder.Configuration);
 
 
 var app = builder.Build();
