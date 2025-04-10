@@ -15,7 +15,7 @@ namespace CQRSConcept.Infrastructure.DataAccess.Repositories.Blog
         {
             await _dbContext.Set<Domain.Entities.BlogEntity.Blog>().AddAsync(blog, cancellationToken);
             var rowAffected = await _dbContext.SaveChangesAsync(cancellationToken);
-            return (blog, rowAffected > 1);
+            return (blog, rowAffected > 0);
         }
 
     }

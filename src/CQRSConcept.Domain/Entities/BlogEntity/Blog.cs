@@ -15,6 +15,15 @@
             Title = title;
             Description = description;
         }
+
+
+        public Blog(long id , string? title, string? description)
+        {
+            Id = id;
+            Title = title;
+            Description = description;
+        }
+
         #endregion
 
 
