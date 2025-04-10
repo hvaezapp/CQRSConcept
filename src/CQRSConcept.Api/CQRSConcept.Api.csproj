@@ -24,10 +24,4 @@
     <ProjectReference Include="..\CQRSConcept.Infrastructure\CQRSConcept.Infrastructure.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Features\Query\Handler\" />
-    <Folder Include="Features\Query\Request\" />
-    <Folder Include="Features\Query\" />
-  </ItemGroup>
-
 </Project>

@@ -3,10 +3,10 @@ using CQRSConcept.Infrastructure.DbContexts.Sql.SqlServer;
 
 namespace CQRSConcept.Infrastructure.DataAccess.Repositories.Blog
 {
-    public class BlogSqlRepository : IBlogSqlRepository
+    public class BlogWriterRepository : IBlogWriterRepository
     {
         private readonly ApplicationDbContext _dbContext;
-        public BlogSqlRepository(ApplicationDbContext dbContext)
+        public BlogWriterRepository(ApplicationDbContext dbContext)
         {
             _dbContext = dbContext;
         }

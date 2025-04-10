@@ -1,5 +1,6 @@
 ﻿using CQRSConcept.Api.Dtos.Blog;
 using CQRSConcept.Api.Features.Command.Request;
+using CQRSConcept.Api.Features.Query.Request;
 using CQRSConcept.Api.Registeration;
 using CQRSConcept.Domain.Registeration;
 using CQRSConcept.Infrastructure.Registeration;
@@ -38,9 +39,16 @@ if (app.Environment.IsDevelopment())
 
 app.MapPost("/Create", async (CreateBlogDto dto, IMediator mediator) =>
 {
-    return await mediator.Send(new CreateBlogRequest { blog = dto });
+    return await mediator.Send(new CreateBlogCommandRequest { blog = dto });
 
-}).WithName("Blog");
+}).WithTags("Blog");
+
+
+app.MapGet("/GetlAll", async (IMediator mediator) =>
+{
+    return await mediator.Send(new GetBlogQueryRequest());
+
+}).WithTags("Blog");
 
 
 app.Run();

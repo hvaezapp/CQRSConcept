@@ -1,6 +1,6 @@
 ﻿namespace CQRSConcept.Domain.Entities.BlogEntity
 {
-    public class Blog : BaseEntity
+    public class Blog : BaseEntity 
     {
 
         #region props
@@ -24,8 +24,11 @@
             Description = description;
         }
 
+
         #endregion
 
+
+     
 
     }
 }

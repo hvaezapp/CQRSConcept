@@ -21,8 +21,8 @@ namespace CQRSConcept.Infrastructure.Registeration
 
         public static IServiceCollection RegisterRepositories(this IServiceCollection services)
         {
-            services.AddScoped<IBlogSqlRepository, BlogSqlRepository>();
-            services.AddScoped<IBlogMongoRepository, BlogMongoRepository>();
+            services.AddScoped<IBlogWriterRepository, BlogWriterRepository>();
+            services.AddScoped<IBlogReaderRepository, BlogReaderRepository>();
 
             return services;
         }

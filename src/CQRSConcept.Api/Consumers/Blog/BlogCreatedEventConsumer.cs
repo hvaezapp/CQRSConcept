@@ -15,8 +15,11 @@ namespace CQRSConcept.Api.Consumers.Blog
 
         public async Task Handle(BlogCreatedEvent eventData, CancellationToken cancellationToken)
         {
-            var newBlog = new Domain.Entities.BlogEntity.Blog(eventData.Id ,  eventData.Title, eventData.Description);
-            await _blogDomainService.CreateInMongo(newBlog, cancellationToken);
+            if (eventData != null)
+            {
+                var newBlog = new Domain.Entities.BlogEntity.Blog(eventData.Id, eventData.Title, eventData.Description);
+                await _blogDomainService.CreateInMongo(newBlog, cancellationToken);
+            }
         }
     }
 }

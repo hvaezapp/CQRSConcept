@@ -4,12 +4,11 @@ using MongoDB.Driver;
 
 namespace CQRSConcept.Infrastructure.DataAccess.Repositories.Blog
 {
-    public class BlogMongoRepository : IBlogMongoRepository
+    public class BlogReaderRepository : IBlogReaderRepository
     {
-
         private readonly ICQRSConceptContext _cqrsConceptContext;
 
-        public BlogMongoRepository(ICQRSConceptContext cqrsConceptContext)
+        public BlogReaderRepository(ICQRSConceptContext cqrsConceptContext)
         {
             _cqrsConceptContext = cqrsConceptContext;
         }

@@ -3,7 +3,7 @@ using MediatR;
 
 namespace CQRSConcept.Api.Features.Command.Request
 {
-    public class CreateBlogRequest : IRequest<long>
+    public class CreateBlogCommandRequest : IRequest<long>
     {
         public CreateBlogDto blog { get; set; }
     }
