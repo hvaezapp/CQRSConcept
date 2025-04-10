@@ -22,7 +22,7 @@ This project follows a multi-layered, component-based architecture with full sep
 
 - **Component Layers**:
   - `CQRSConcept.Api` – The API layer exposing HTTP endpoints, features, consumers.
-  - `CQRSConcept.Domain` – Core domain and services, contracts.
+  - `CQRSConcept.Domain` – Core domain and services (domain logic), contracts.
   - `CQRSConcept.Infrastructure` – Data persistence, repositories, external services.
 
 ---
@@ -38,3 +38,6 @@ CQRSConcept/
 │   └── CQRSConcept.Infrastructure    # Data access, MongoDB & SQL integration
 │
 └── docker-compose/                   # Docker setup (MongoDB, etc.)
+
+
+![Api endpoints](CQRSConceptSwagger.png)
