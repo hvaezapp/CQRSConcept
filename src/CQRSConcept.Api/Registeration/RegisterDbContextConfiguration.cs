@@ -5,7 +5,7 @@ namespace CQRSConcept.Api.Registeration
 {
     public static class RegisterDbContextConfiguration
     {
-        public static void RegisterDbContext(this IServiceCollection services, IConfiguration configuration)
+        public static void RegisterSqlServer(this IServiceCollection services, IConfiguration configuration)
         {
             services.AddDbContext<ApplicationDbContext>((serviceProvider, options) =>
             {

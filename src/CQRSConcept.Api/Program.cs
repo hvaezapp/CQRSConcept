@@ -1,6 +1,10 @@
+using CQRSConcept.Api.Dtos.Blog;
+using CQRSConcept.Api.Features.Command.Request;
 using CQRSConcept.Api.Registeration;
-using CQRSConcept.Infrastructure.DbContexts.Mongo;
+using CQRSConcept.Domain.Registeration;
 using CQRSConcept.Infrastructure.Registeration;
+using MediatR;
+using Microsoft.AspNetCore.Mvc;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -8,14 +12,15 @@ var builder = WebApplication.CreateBuilder(args);
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
 
-
 //ioc
-builder.Services.RegisterDbContext(builder.Configuration);
+
+builder.Services.RegisterSqlServer(builder.Configuration);
 builder.Services.RegisterMongo(builder.Configuration);
 
+builder.Services.RegisterRepositories();
+builder.Services.RegisterDomainServices();
 
 var app = builder.Build();
-
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
@@ -23,28 +28,11 @@ if (app.Environment.IsDevelopment())
     app.MapOpenApi();
 }
 
-var summaries = new[]
+app.MapGet("/Create", async ([FromBody] CreateBlogDto dto, IMediator mediator) =>
 {
-    "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-};
+    return await mediator.Send(new CreateBlogRequest { blog = dto });
 
-app.MapGet("/weatherforecast", (ICQRSConceptContext cQRSConceptContext) =>
-{
-    var forecast = Enumerable.Range(1, 5).Select(index =>
-        new WeatherForecast
-        (
-            DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
-            Random.Shared.Next(-20, 55),
-            summaries[Random.Shared.Next(summaries.Length)]
-        ))
-        .ToArray();
-    return forecast;
-})
-.WithName("GetWeatherForecast");
+}).WithName("Blog");
+
 
 app.Run();
-
-internal record WeatherForecast(DateOnly Date, int TemperatureC, string? Summary)
-{
-    public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
-}

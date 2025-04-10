@@ -11,12 +11,13 @@ namespace CQRSConcept.Infrastructure.DataAccess.Repositories.Blog
             _dbContext = dbContext;
         }
 
-        public async Task<bool> Create(Domain.Entities.BlogEntity.Blog blog, CancellationToken cancellationToken)
+        public async Task<(Domain.Entities.BlogEntity.Blog, bool)> Create(Domain.Entities.BlogEntity.Blog blog, CancellationToken cancellationToken)
         {
             await _dbContext.Set<Domain.Entities.BlogEntity.Blog>().AddAsync(blog, cancellationToken);
-            await _dbContext.SaveChangesAsync(cancellationToken);
-            return true;
+            var rowAffected = await _dbContext.SaveChangesAsync(cancellationToken);
+            return (blog, rowAffected > 1);
         }
+
     }
 
 

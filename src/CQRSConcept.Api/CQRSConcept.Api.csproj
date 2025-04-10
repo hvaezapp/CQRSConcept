@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>net9.0</TargetFramework>
@@ -21,6 +21,12 @@
   <ItemGroup>
     <ProjectReference Include="..\CQRSConcept.Domain\CQRSConcept.Domain.csproj" />
     <ProjectReference Include="..\CQRSConcept.Infrastructure\CQRSConcept.Infrastructure.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Features\Query\Handler\" />
+    <Folder Include="Features\Query\Request\" />
+    <Folder Include="Features\Query\" />
   </ItemGroup>
 
 </Project>
