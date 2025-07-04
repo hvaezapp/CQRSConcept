@@ -30,7 +30,7 @@ This project follows a multi-layered, component-based architecture with full sep
 ![Api endpoints](CQRSConceptSwagger.png)
 
 
-## 🗂️ Solution Structure
+## 🗂️ Project Structure
 
 ```text
 CQRSConcept/
@@ -42,3 +42,17 @@ CQRSConcept/
 │
 └── docker-compose/                   # Docker setup (MongoDB, etc.)
 
+
+## 💡 Getting Started
+
+### Prerequisites
+
+- .NET 9
+- Docker
+
+### Setup
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/hvaezapp/CQRSConcept.git
