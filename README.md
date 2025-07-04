@@ -50,6 +50,7 @@ CQRSConcept/
 
 - .NET 9
 - Docker
+- Running Mongo Instance with Docker
 
 ### Setup
 
@@ -57,3 +58,10 @@ CQRSConcept/
 
    ```bash
    git clone https://github.com/hvaezapp/CQRSConcept.git
+
+2. Run :
+
+   ```bash
+   dotnet restore
+   dotnet build
+   dotnet run
