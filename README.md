@@ -1,4 +1,4 @@
-# CQRSConcept
+# CQRS Concept
 
 A clean and pragmatic ASP.NET Core 9 solution demonstrating the **CQRS (Command Query Responsibility Segregation)** pattern using **MediatR**, **MongoDB**, **SQL Server**, and a **Component-Based Architecture**.
 
